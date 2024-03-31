@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Text Sentiment Predictor</title>
     <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
+    />
 
     <style>
       #predict {
@@ -78,8 +86,28 @@
       </button>
     </form>
 
-    <div id="predictionResult"></div>
-    <div id="graphContainer"></div>
+    <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
+      <div>
+        <h1 class="text-4xl">Prediction Result</h1>
+        <div class="p-4 m-2 border">
+          <div id="predictionResult"></div>
+        </div>
+      </div>
+      <div class="pt-6">
+        <h1 class="text-4xl">graph Result</h1>
+        <div class="p-4 m-2 border">
+          <div id="graphContainer"></div>
+        </div>
+      </div>
+      <button
+        id="downloadBtn"
+        style="display: none"
+        onclick="downloadPredictions()"
+        class="text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 mt-10 block shadow-xl hover:text-white hover:bg-black"
+      >
+        Download Predictions
+      </button>
+    </div>
 
     <script>
       function predict() {
